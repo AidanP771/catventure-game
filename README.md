@@ -31,13 +31,13 @@ Deliver a fun and accessible game experience while showcasing modern UI/UX princ
 │
 ├── index.html              # Main HTML file
 ├── style.css               # Main CSS file
-├── script.js               # Core game logic
+├── script.js               # Entry point – initializes the game and ties it together
 ├── assets/
 │   ├── images/             # Cat sprite, background, collectibles, etc.
 │   └── audio/              # Jump, collect, win/loss sounds
 ├── components/
-│   ├── player.js           # Player (cat) class and behaviour
-│   ├── platform.js         # Platform objects
+│   ├── player.js           # Player class (movement, jump, draw)
+│   ├── platform.js         # Platform rendering logic (and eventually classes)
 │   ├── collectibles.js     # Yarn balls or fish items
 │   ├── ui.js               # UI functions (start screen, score, toggle, etc.)
 |   └── input.js            # Keyboard input tracking
