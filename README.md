@@ -159,6 +159,29 @@ Want to contribute? Fork the project, make a branch, and submit a pull request. 
 - **Linter:** ESLint configured. Run `npx eslint .` to check for issues.
 - **Commit Messages:** Use present tense, e.g., `Add jump logic` or `Fix collision bug`.
 
+## 🔍 Code Linting & Style
+
+This project uses **[ESLint](https://eslint.org/)** with the modern flat config format (`eslint.config.mjs`) to ensure clean, consistent code across the team.
+
+### ✨ Linting Rules Overview
+
+- **2-space indentation**
+- **Double quotes** for strings
+- **Semicolons required**
+- **PascalCase** for class names
+- **camelCase** for variables and functions
+- Allows `console.log` for debugging
+
+> Linting errors will show automatically in VS Code if you have the ESLint extension installed.
+
+### 🚀 How to Run the Linter
+
+You can lint the whole project manually using:
+
+```bash
+npm run lint
+```
+
 ## 📝 License
 
 This project is licensed under the [MIT License](LICENSE).
