@@ -72,8 +72,9 @@ class Player {
     this.x = Math.max(0, Math.min(this.x, canvas.width - this.width));
 
     // Prevent falling below canvas (fail-safe)
-    if (this.y > canvas.height) {
-      this.y = platform.y - this.height;
+    // Replace player at bottom edge of the canvas
+    if (this.y + this.height > canvas.height) {
+      this.y = canvas.height - this.height;
       this.velocityY = 0;
       this.isJumping = false;
     }
