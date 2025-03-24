@@ -158,3 +158,7 @@ Want to contribute? Fork the project, make a branch, and submit a pull request. 
 - **File Naming:** Use kebab-case for files (e.g., `player.js`, `main-menu.html`).
 - **Linter:** ESLint configured. Run `npx eslint .` to check for issues.
 - **Commit Messages:** Use present tense, e.g., `Add jump logic` or `Fix collision bug`.
+
+## 📝 License
+
+This project is licensed under the [MIT License](LICENSE).
