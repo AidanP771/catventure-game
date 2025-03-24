@@ -147,3 +147,13 @@ Each member’s role and responsibilities
   ### 🧩 Goal
   Navigate through each level by jumping on platforms, collecting yarn balls and   fish, and avoiding obstacles. Reach the cozy cat bed to finish the level.
 
+## 🤝 Contributing
+
+Want to contribute? Fork the project, make a branch, and submit a pull request. Please follow our code style guide and commit format.
+
+## 🧑‍💻 Development Guidelines
+
+- **Code Style:** PascalCase for classes, camelCase for functions/variables.
+- **File Naming:** Use kebab-case for files (e.g., `player.js`, `main-menu.html`).
+- **Linter:** ESLint configured. Run `npx eslint .` to check for issues.
+- **Commit Messages:** Use present tense, e.g., `Add jump logic` or `Fix collision bug`.
