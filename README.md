@@ -66,9 +66,9 @@
 
 ## ✅ Next Best Task to Tackle
 
-Now that your linter and documentation are locked in, your **next major focus should be development**:
+Now that your linter and documentation are locked in, the **next major focus should be development**:
 
-### 🧑‍💻 Suggested Immediate Next Steps
+### 🧑‍💻 Suggested\Ideal Immediate Next Steps
 
 1. **Player Movement Logic**
 
