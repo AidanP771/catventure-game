@@ -182,6 +182,21 @@ You can lint the whole project manually using:
 npm run lint
 ```
 
+To automatically fix common issues:
+
+```bash
+npm run lint:fix
+```
+
+### 📁 Linter Config Location
+Our ESLint rules are stored in:
+
+```
+eslint.config.mjs
+```
+
+We also ignore node_modules/ and package-lock.json in .eslintignore.
+
 ## 📝 License
 
 This project is licensed under the [MIT License](LICENSE).
