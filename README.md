@@ -10,7 +10,7 @@
 | README Documentation (features, tools, guide)              | ✅     | Clear, current, includes linter setup  |
 | License                                                    | ✅     | MIT License added                      |
 | Team Contribution Section                                  | 🟡     | Placeholder exists in README           |
-| Privacy Notice Page                                        | 🔜     | Placeholder HTML exists, needs content |
+| Privacy Notice Page                                        | ✅     | `privacy.html` created and styled      |
 | Screenshots / Demo Video                                   | 🔜     | Will be added near-final stage         |
 | Presentation Video (5–7 min)                               | 🔜     | Section exists in README               |
 
@@ -88,6 +88,7 @@ Now that scaffolding, logic, and documentation are in place, the **ideal progres
    - Start screen → click or keypress to start the game
    - Instruction overlay (optional)
    - End screen (win/loss)
+   - Include Privacy Policy link on start screen
 
 4. **Accessibility Toggle**
    - Add high-contrast mode toggle button
