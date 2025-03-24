@@ -39,7 +39,8 @@ Deliver a fun and accessible game experience while showcasing modern UI/UX princ
 │   ├── player.js           # Player (cat) class and behaviour
 │   ├── platform.js         # Platform objects
 │   ├── collectibles.js     # Yarn balls or fish items
-│   └── ui.js               # UI functions (start screen, score, toggle, etc.)
+│   ├── ui.js               # UI functions (start screen, score, toggle, etc.)
+|   └── input.js            # Keyboard input tracking
 ├── privacy.html            # Simple privacy policy page
 ├── accessibility.js        # High contrast toggle, scalable font logic
 └── README.md
