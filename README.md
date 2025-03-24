@@ -73,8 +73,14 @@ Deliver a fun and accessible game experience while showcasing modern UI/UX princ
 
 Each member’s role and responsibilities
 
-## 📁 How to Run
+## 📁 How to Play
 
-1. Open `index.html` in browser
-2. Use keyboard arrows/WASD to play
-3. Toggle accessibility modes in top-right UI
+  ## 🎮 Controls
+  - Move Left: ← or A
+  - Move Right: → or D
+  - Jump: Spacebar or W
+  - Toggle High Contrast: [Accessible UI Button]
+
+  ## 🧩 Goal
+  Navigate through each level by jumping on platforms, collecting yarn balls and   fish, and avoiding obstacles. Reach the cozy cat bed to finish the level.
+
