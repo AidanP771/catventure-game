@@ -66,7 +66,7 @@
 
 ## ✅ Next Best Task to Tackle
 
-Now that your linter and documentation are locked in, the **next major focus should be development**:
+Now that the linter and documentation are locked in, the **next major focus should be development**:
 
 ### 🧑‍💻 Suggested\Ideal Immediate Next Steps
 
