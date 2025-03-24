@@ -74,13 +74,11 @@ Deliver a fun and accessible game experience while showcasing modern UI/UX princ
 Each member’s role and responsibilities
 
 ## 📁 How to Play
-
-  ## 🎮 Controls
+  ### 🎮 Controls
   - Move Left: ← or A
   - Move Right: → or D
   - Jump: Spacebar or W
   - Toggle High Contrast: [Accessible UI Button]
-
-  ## 🧩 Goal
+  ### 🧩 Goal
   Navigate through each level by jumping on platforms, collecting yarn balls and   fish, and avoiding obstacles. Reach the cozy cat bed to finish the level.
 
