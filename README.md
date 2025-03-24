@@ -8,6 +8,16 @@ Catventure is a 2D platformer where players guide a nimble cat through platforms
 
 Deliver a fun and accessible game experience while showcasing modern UI/UX principles, front-end development, and inclusive design.
 
+## 📁 How to Play
+  ### 🎮 Controls
+  - Move Left: ← or A
+  - Move Right: → or D
+  - Jump: Spacebar or W
+  - Toggle High Contrast: [Accessible UI Button]
+    
+  ### 🧩 Goal
+  Navigate through each level by jumping on platforms, collecting yarn balls and   fish, and avoiding obstacles. Reach the cozy cat bed to finish the level.
+
 ## 🔧 Technology Stack
 
 - **Languages**: HTML5, CSS3, JavaScript (Vanilla) \*\*This could change..
@@ -38,15 +48,6 @@ Deliver a fun and accessible game experience while showcasing modern UI/UX princ
 ## 🧭 User Flow
 
 1. Start Menu → 2. Instructions → 3. Gameplay → 4. Game Over/Win Screen
-
-## 🧩 Features
-
-- Smooth 2D movement and jumping
-- Animated collectible items
-- Responsive UI and layout
-- Game over/win conditions
-- Accessible with keyboard navigation
-- Color-blind and high-contrast modes
 
 ## ♿ Accessibility
 
@@ -120,6 +121,14 @@ Ensuring **Catventure** is accessible to a diverse range of players enhances inc
   - Create a dedicated menu where players can adjust accessibility features, allowing for a personalized gaming experience.
   - Include explanations for each setting to inform players of their functions.
 
+## 🧩 Features
+
+- Smooth 2D movement and jumping
+- Animated collectible items
+- Responsive UI and layout
+- Game over/win conditions
+- Accessible with keyboard navigation
+- Color-blind and high-contrast modes
 
 ## 🔒 Privacy & Security
 
@@ -138,14 +147,6 @@ Ensuring **Catventure** is accessible to a diverse range of players enhances inc
 
 Each member’s role and responsibilities
 
-## 📁 How to Play
-  ### 🎮 Controls
-  - Move Left: ← or A
-  - Move Right: → or D
-  - Jump: Spacebar or W
-  - Toggle High Contrast: [Accessible UI Button]
-  ### 🧩 Goal
-  Navigate through each level by jumping on platforms, collecting yarn balls and   fish, and avoiding obstacles. Reach the cozy cat bed to finish the level.
 
 ## 🤝 Contributing
 
