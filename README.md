@@ -33,6 +33,7 @@
 | Game over/win conditions                                 | 🔜     | Placeholder logic pending                     |
 | Start/instruction/end screens                            | 🟡     | Wireframes exist; not yet implemented         |
 | Accessibility features in-game (contrast, scaling, etc.) | 🔜     | Planned; toggle partially stubbed             |
+| Level design via CSV loading                             | ✅     | Levels planned using Google Sheets CSVs       |
 
 ---
 
@@ -93,3 +94,35 @@ Now that scaffolding, logic, and documentation are in place, the **ideal progres
 4. **Accessibility Toggle**
    - Add high-contrast mode toggle button
    - Hook up to `accessibility.js`
+
+---
+
+## 🧩 Level Design Guidelines
+
+To simplify level design and allow for easy non-coder contributions, Catventure levels are created using Google Sheets and exported as CSV files. Here's how we manage level creation:
+
+### 🧠 CSV-Based Level Design
+
+- Levels are designed in **Google Sheets** using a grid layout.
+- Each **cell represents a tile** of size 50x50 pixels in-game.
+- You only need to fill in tiles that matter — **empty cells can be left blank**.
+
+### 🧱 Tile Legend
+
+| Symbol | Represents     |
+|--------|----------------|
+| ▓      | Platform       |
+| 🧶     | Collectible    |
+| 🐾     | Goal (Cat Bed) |
+| (blank)| Empty tile     |
+
+### 📏 Grid Guidelines for Designers
+
+- Use **16 columns × 12 rows** to fit the 800×600 canvas.
+- Each tile = **50x50 pixels**.
+- No need to fill empty spaces — just enter what matters.
+- Export each sheet as CSV (`File > Download > CSV`) and save to `levels/`.
+
+A parser reads each CSV, maps characters to game objects, and builds the level dynamically during runtime.
+
+Want to design a level? Just open the template, drop in your platforms and items, and we’ll load it up! 🐾
