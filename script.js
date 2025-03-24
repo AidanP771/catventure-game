@@ -2,6 +2,10 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
+// Get slider and label elements
+const speedSlider = document.getElementById("speedSlider");
+const speedValueDisplay = document.getElementById("speedValue");
+
 // Define the frames per second we want to run at (optional, for future logic)
 const FPS = 60;
 
@@ -27,7 +31,6 @@ class Player {
     this.width = 40;
     this.height = 40;
     this.color = "orange"; // Placeholder player colour
-    this.speed = 5;
 
     // Vertical movement variables
     this.velocityY = 0;
@@ -35,6 +38,10 @@ class Player {
   }
 
   update() {
+    // Speed of player changeable by user (for testing)
+    this.speed = parseInt(speedSlider.value);
+    speedValueDisplay.textContent = this.speed;
+
     // Movement will be handled based on key input (placeholder)
     // Horizontal movement
     if (keys["ArrowLeft"] || keys["a"]) {
