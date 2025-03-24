@@ -168,8 +168,8 @@ This project uses **[ESLint](https://eslint.org/)** with the modern flat config 
 - **2-space indentation**
 - **Double quotes** for strings
 - **Semicolons required**
-- **PascalCase** for class names
-- **camelCase** for variables and functions
+- **PascalCase** for class names (e.g., `Player`, `GameEngine`)
+- **camelCase** for variables and functions (e.g., `checkCollision`, `spawnPlatform`)
 - Allows `console.log` for debugging
 
 > Linting errors will show automatically in VS Code if you have the ESLint extension installed.
@@ -195,7 +195,21 @@ Our ESLint rules are stored in:
 eslint.config.mjs
 ```
 
-We also ignore node_modules/ and package-lock.json in .eslintignore.
+We also ignore `node_modules/` and `package-lock.json` in `.eslintignore`.
+
+### 🧱 Naming Conventions
+
+We follow consistent naming patterns across the codebase:
+
+| Type               | Convention         | Example               |
+|--------------------|--------------------|------------------------|
+| Classes            | `PascalCase`       | `Player`, `Platform`   |
+| Functions          | `camelCase`        | `checkCollision()`     |
+| Variables          | `camelCase`        | `scoreCounter`         |
+| Files & folders    | `kebab-case`       | `player.js`, `game-loop/` |
+| Constants (optional) | `ALL_CAPS_SNAKE_CASE` | `MAX_JUMP_HEIGHT` |
+
+These conventions help keep our code readable and maintainable for everyone on the team.
 
 ## 📝 License
 
