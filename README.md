@@ -40,7 +40,8 @@ Deliver a fun and accessible game experience while showcasing modern UI/UX princ
 │   ├── platform.js         # Platform class and rendering utilities
 │   ├── collectibles.js     # Yarn balls or fish items
 │   ├── ui.js               # UI functions (start screen, score, toggle, etc.)
-|   └── input.js            # Keyboard input tracking
+|   ├── input.js            # Keyboard input tracking
+|   └── levelLoader.js      # Parses CSV Level into a 2D grid array to form levels
 ├── levels/
 |   ├── level1.csv
 │   ├── level2.csv
