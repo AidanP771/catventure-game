@@ -17,8 +17,9 @@ let goal = null;
 let player = null;
 
 // Load the level and THEN start the game
-loadLevel("levels/level1.csv").then((level) => {
+loadLevel("levels/level1.csv", canvas.height).then((level) => {
   platforms = level.platforms;
+  console.log(platforms);
   collectibles = level.collectibles;
   goal = level.goal;
 

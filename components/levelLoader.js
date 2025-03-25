@@ -7,7 +7,7 @@ const TILE_SIZE = 50;
  * @param {string} path - Relative path to the CSV file
  * @returns {Promise<{ platforms: Platform[], collectibles: Object[], goal: Object | null }>}
  */
-export async function loadLevel(path) {
+export async function loadLevel(path, canvasHeight) {
   const response = await fetch(path);
   const text = await response.text();
 
@@ -16,12 +16,14 @@ export async function loadLevel(path) {
   let goal = null;
 
   const rows = text.trim().split("\n");
+  const rowCount = rows.length;
 
   rows.forEach((line, rowIndex) => {
     const cols = line.split(",");
     cols.forEach((char, colIndex) => {
       const x = colIndex * TILE_SIZE;
-      const y = rowIndex * TILE_SIZE;
+
+      const y = canvasHeight - rows.length * TILE_SIZE + rowIndex * TILE_SIZE;
 
       switch (char.trim()) {
         case "0":
