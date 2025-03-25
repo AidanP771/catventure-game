@@ -22,8 +22,8 @@ export async function loadLevel(path, canvasHeight) {
     const cols = line.split(",");
     cols.forEach((char, colIndex) => {
       const x = colIndex * TILE_SIZE;
-
-      const y = canvasHeight - rows.length * TILE_SIZE + rowIndex * TILE_SIZE;
+      const y =
+        canvasHeight - (rowCount - 1) * TILE_SIZE + rowIndex * TILE_SIZE;
 
       switch (char.trim()) {
         case "0":
