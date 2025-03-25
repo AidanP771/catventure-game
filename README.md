@@ -37,7 +37,7 @@ Deliver a fun and accessible game experience while showcasing modern UI/UX princ
 │   └── audio/              # Jump, collect, win/loss sounds
 ├── components/
 │   ├── player.js           # Player class (movement, jump, draw)
-│   ├── platform.js         # Platform rendering logic (and eventually classes)
+│   ├── platform.js         # Platform class and rendering utilities
 │   ├── collectibles.js     # Yarn balls or fish items
 │   ├── ui.js               # UI functions (start screen, score, toggle, etc.)
 |   └── input.js            # Keyboard input tracking
@@ -130,6 +130,8 @@ Ensuring **Catventure** is accessible to a diverse range of players enhances inc
 - Game over/win conditions
 - Accessible with keyboard navigation
 - Color-blind and high-contrast modes
+- Multiple platforms supported via `Platform` class
+- Collision detection supports multi-platform layouts
 
 ## 🔒 Privacy & Security
 
@@ -211,6 +213,19 @@ We follow consistent naming patterns across the codebase:
 | Constants (optional) | `ALL_CAPS_SNAKE_CASE` | `MAX_JUMP_HEIGHT` |
 
 These conventions help keep our code readable and maintainable for everyone on the team.
+
+## 🔮 Future Enhancements
+
+We've recently implemented reusable `Platform` class logic to simplify working with multiple platforms and support future expansion. Additional enhancements we may explore include:
+
+- **Platform Types & Behaviours:**
+  - Moving platforms, disappearing blocks, bounce tiles, etc.
+- **Level Loader from CSV/Grid:**
+  - Design levels in Google Sheets.
+  - Dynamically render platforms, collectibles, and goals from exported CSVs.
+- **Side-Scrolling Implementation:**
+  - Introduce camera logic that follows the player horizontally.
+  - Allow larger levels that extend beyond the visible screen area.
 
 ## 📝 License
 
