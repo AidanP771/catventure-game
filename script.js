@@ -1,40 +1,49 @@
-// Import modules
-import { Player } from "./components/player.js";
-import { keys, initInputListeners } from "./components/input.js";
-import { Platform, drawAllPlatforms } from "./components/platform.js";
-
 // Get canvas and drawing context
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
-// Define physics constants
+// Physics constants
 const GRAVITY = 0.5;
 const JUMP_FORCE = -12;
 
-// Initialize input listeners for keyboard control
-initInputListeners();
+// Import modules
+import { loadLevel } from "./components/levelLoader.js";
+import { Player } from "./components/player.js";
+import { keys, initInputListeners } from "./components/input.js";
 
-const platforms = [
-  new Platform(200, 500, 400, 20, "red"),
-  new Platform(50, 375, 400, 20, "blue"),
-  new Platform(200, 250, 400, 20, "green"),
-  new Platform(50, 125, 400, 20, "purple"),
-];
+let platforms = [];
+let collectibles = [];
+let goal = null;
+let player = null;
 
-// Create the player object and link canvas + platform
-const player = new Player(ctx, canvas, platforms);
+// Load the level and THEN start the game
+loadLevel("levels/level1.csv").then((level) => {
+  platforms = level.platforms;
+  collectibles = level.collectibles;
+  goal = level.goal;
+
+  // Create the player object and link canvas + platform
+  player = new Player(ctx, canvas, platforms);
+
+  // Initialize input listeners for keyboard control
+  initInputListeners();
+  requestAnimationFrame(gameLoop);
+});
 
 // Game loop that runs every frame
 function gameLoop() {
   // Clear the canvas before drawing each frame
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  // Update and render game objects
-  player.update(keys, GRAVITY, JUMP_FORCE);
-  player.draw();
-  drawAllPlatforms(ctx, platforms);
+  if (player) {
+    player.update(keys, GRAVITY, JUMP_FORCE);
+    player.draw();
+  }
 
-  // Request the next animation frame
+  platforms.forEach((p) => p.draw(ctx));
+
+  // Collectibles and goal will be drawn here later
+
   requestAnimationFrame(gameLoop);
 }
 
