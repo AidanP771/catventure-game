@@ -41,6 +41,10 @@ Deliver a fun and accessible game experience while showcasing modern UI/UX princ
 │   ├── collectibles.js     # Yarn balls or fish items
 │   ├── ui.js               # UI functions (start screen, score, toggle, etc.)
 |   └── input.js            # Keyboard input tracking
+├── levels/
+|   ├── level1.csv
+│   ├── level2.csv
+│   └── ...
 ├── privacy.html            # Simple privacy policy page
 ├── accessibility.js        # High contrast toggle, scalable font logic
 └── README.md
