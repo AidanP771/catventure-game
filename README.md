@@ -253,4 +253,4 @@ We've recently implemented reusable `Platform` class logic to simplify working w
 
 ## 📝 License
 
-This project is licensed under the [GNU GLP License](LICENSE).
+This project is licensed under the [GNU GPL License](LICENSE).
