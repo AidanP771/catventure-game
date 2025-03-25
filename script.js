@@ -14,7 +14,12 @@ const JUMP_FORCE = -12;
 // Initialize input listeners for keyboard control
 initInputListeners();
 
-const platforms = [new Platform(200, 500, 400, 20, "red")];
+const platforms = [
+  new Platform(200, 500, 400, 20, "red"),
+  new Platform(50, 375, 400, 20, "blue"),
+  new Platform(200, 250, 400, 20, "green"),
+  new Platform(50, 125, 400, 20, "purple"),
+];
 
 // Create the player object and link canvas + platform
 const player = new Player(ctx, canvas, platforms);
