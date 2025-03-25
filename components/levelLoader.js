@@ -1,4 +1,5 @@
 import { Platform } from "./platform.js";
+import { Collectible } from "./collectibles.js";
 
 const TILE_SIZE = 50;
 
@@ -30,7 +31,7 @@ export async function loadLevel(path, canvasHeight) {
           platforms.push(new Platform(x, y, TILE_SIZE, TILE_SIZE));
           break;
         case "$":
-          collectibles.push({ x, y }); // replace with a Collectible class later
+          collectibles.push(new Collectible(x, y)); // Collectible
           break;
         case "!":
           goal = { x, y }; // replace with a Goal class later

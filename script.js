@@ -1,3 +1,9 @@
+// Import modules
+import { loadLevel } from "./components/levelLoader.js";
+import { Player } from "./components/player.js";
+import { keys, initInputListeners } from "./components/input.js";
+import { Collectible } from "./components/collectibles.js";
+
 // Get canvas and drawing context
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
@@ -6,18 +12,13 @@ const ctx = canvas.getContext("2d");
 const GRAVITY = 0.5;
 const JUMP_FORCE = -12;
 
-// Import modules
-import { loadLevel } from "./components/levelLoader.js";
-import { Player } from "./components/player.js";
-import { keys, initInputListeners } from "./components/input.js";
-
+let player;
 let platforms = [];
 let collectibles = [];
 let goal = null;
-let player = null;
 
 // Load the level and THEN start the game
-loadLevel("levels/level8.csv", canvas.height).then((level) => {
+loadLevel("levels/level1.csv", canvas.height).then((level) => {
   platforms = level.platforms;
   console.log(platforms);
   collectibles = level.collectibles;
@@ -43,7 +44,14 @@ function gameLoop() {
 
   platforms.forEach((p) => p.draw(ctx));
 
-  // Collectibles and goal will be drawn here later
+  // Draw and check collision for each collectible
+  collectibles.forEach((c) => {
+    c.draw(ctx);
+    if (c.checkCollision(player)) {
+      console.log("Collected!");
+      // TODO: Add score logic here
+    }
+  });
 
   requestAnimationFrame(gameLoop);
 }
