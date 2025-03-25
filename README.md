@@ -247,9 +247,6 @@ We've recently implemented reusable `Platform` class logic to simplify working w
 
 - **Platform Types & Behaviours:**
   - Moving platforms, disappearing blocks, bounce tiles, etc.
-- **Level Loader from CSV/Grid:**
-  - Design levels in Google Sheets.
-  - Dynamically render platforms, collectibles, and goals from exported CSVs.
 - **Side-Scrolling Implementation:**
   - Introduce camera logic that follows the player horizontally.
   - Allow larger levels that extend beyond the visible screen area.
