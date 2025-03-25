@@ -1,9 +1,9 @@
 // Player class definition - handles movement, jumping, and collision with platforms
 export class Player {
-  constructor(ctx, canvas, platform) {
+  constructor(ctx, canvas, platforms) {
     this.ctx = ctx; // Drawing context
     this.canvas = canvas; // Reference to the game canvas
-    this.platform = platform; // The current platform the player can interact with
+    this.platform = platforms; // The current platform the player can interact with
 
     // Player position and size
     this.x = canvas.width / 2;
@@ -37,18 +37,20 @@ export class Player {
     this.y += this.velocityY;
 
     // Platform collision detection
-    const p = this.platform;
-    if (
-      this.velocityY >= 0 &&
-      this.y + this.height >= p.y &&
-      this.y + this.height - this.velocityY <= p.y &&
-      this.x + this.width > p.x &&
-      this.x < p.x + p.width
-    ) {
-      // Snap to top of platform
-      this.y = p.y - this.height;
-      this.velocityY = 0;
-      this.isJumping = false;
+    for (const platform of this.platform) {
+      if (
+        this.velocityY >= 0 && // Only check when falling
+        this.y + this.height >= platform.y &&
+        this.y + this.height - this.velocityY <= platform.y &&
+        this.x + this.width > platform.x &&
+        this.x < platform.x + platform.width
+      ) {
+        // Snap to top of platform
+        this.y = platform.y - this.height;
+        this.velocityY = 0;
+        this.isJumping = false;
+        break; // Stop checking other platforms once landed
+      }
     }
 
     // Clamp horizontal movement to within canvas bounds
