@@ -1,14 +1,29 @@
-// A temporary platform used for testing
-export const testPlatform = {
-  x: 200,
-  y: 500,
-  width: 400,
-  height: 20,
-  color: "red",
-};
+// Class representing a single platform in the game
+export class Platform {
+  constructor(x, y, width, height, color = "red") {
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height;
+    this.color = color;
+  }
 
-// Function to draw a single platform rectangle on the canvas
-export function drawPlatform(ctx, platform) {
-  ctx.fillStyle = platform.color;
-  ctx.fillRect(platform.x, platform.y, platform.width, platform.height);
+  // Draw the platform to the canvas
+  draw(ctx) {
+    ctx.fillStyle = this.color;
+    ctx.fillRect(this.x, this.y, this.width, this.height);
+  }
+
+  // Placeholder for future platform behaviour (e.g., movement)
+  update() {
+    // Add movement logic here if needed later
+  }
+}
+
+// Utility function to draw all platforms in one loop
+export function drawAllPlatforms(ctx, platforms) {
+  platforms.forEach((platform) => {
+    platform.update();
+    platform.draw(ctx);
+  });
 }
