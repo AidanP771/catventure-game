@@ -137,6 +137,28 @@ Ensuring **Catventure** is accessible to a diverse range of players enhances inc
 - Color-blind and high-contrast modes
 - Multiple platforms supported via `Platform` class
 - Collision detection supports multi-platform layouts
+- CSV-based level loading system
+- Levels can be authored in Google Sheets and dynamically imported
+
+## 🗺️ Level System
+
+Levels are designed using a simple CSV format and loaded dynamically into the game at runtime. This allows designers to build levels in tools like Google Sheets or Excel and export them for use in the game.
+
+### 🔤 Symbol Key
+| Symbol | Meaning                     |
+|--------|-----------------------------|
+| `0`    | Platform or ground block    |
+| `$`    | Collectible (yarn or fish)  |
+| `!`    | Cat bed (level goal)        |
+| (blank) | Empty space                |
+
+### 📏 Tile Scaling
+
+- Each grid cell represents a `50x50` pixel tile on the canvas.
+- The bottom row of the CSV grid aligns flush with the bottom of the canvas.
+- Platforms and items are positioned based on their row/column in the grid.
+
+You can find level files in the `/levels/` folder.
 
 ## 🔒 Privacy & Security
 
