@@ -3,8 +3,6 @@ import { Player } from "./components/player.js";
 import { keys, initInputListeners } from "./components/input.js";
 import { Platform, drawAllPlatforms } from "./components/platform.js";
 
-const platforms = [new Platform(200, 500, 400, 20, "red")];
-
 // Get canvas and drawing context
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
@@ -16,8 +14,10 @@ const JUMP_FORCE = -12;
 // Initialize input listeners for keyboard control
 initInputListeners();
 
+const platforms = [new Platform(200, 500, 400, 20, "red")];
+
 // Create the player object and link canvas + platform
-const player = new Player(ctx, canvas, Platform);
+const player = new Player(ctx, canvas, platforms);
 
 // Game loop that runs every frame
 function gameLoop() {

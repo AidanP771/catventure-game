@@ -3,7 +3,7 @@ export class Player {
   constructor(ctx, canvas, platforms) {
     this.ctx = ctx; // Drawing context
     this.canvas = canvas; // Reference to the game canvas
-    this.platform = platforms; // The current platform the player can interact with
+    this.platforms = platforms; // Array of platforms
 
     // Player position and size
     this.x = canvas.width / 2;
@@ -32,12 +32,12 @@ export class Player {
       this.isJumping = true;
     }
 
-    // Apply gravity and update vertical position
+    // Apply gravity
     this.velocityY += gravity;
     this.y += this.velocityY;
 
-    // Platform collision detection
-    for (const platform of this.platform) {
+    // Check collision with each platform
+    for (const platform of this.platforms) {
       if (
         this.velocityY >= 0 && // Only check when falling
         this.y + this.height >= platform.y &&
@@ -53,10 +53,10 @@ export class Player {
       }
     }
 
-    // Clamp horizontal movement to within canvas bounds
+    // Clamp player within screen horizontally
     this.x = Math.max(0, Math.min(this.x, this.canvas.width - this.width));
 
-    // Prevent falling below the bottom of the screen
+    // Prevent falling below bottom of screen
     if (this.y + this.height > this.canvas.height) {
       this.y = this.canvas.height - this.height;
       this.velocityY = 0;
