@@ -149,16 +149,42 @@ function saveSettings() {
   }
 }
 
-// Character selection handling
+// Character selection handling - update this function
 function setupCharacterSelection() {
   const progress = loadGameProgress();
   const characterOptions = document.querySelectorAll(".character-option");
 
-  // Mark the currently selected character
+  // Remove color background and add sprite preview
   characterOptions.forEach((option, index) => {
+    const previewDiv = option.querySelector(".character-preview");
+    
+    // Clear any existing content
+    previewDiv.style.backgroundColor = "";
+    previewDiv.innerHTML = "";
+    
+    // Set character color as fallback with correct spelling
+    const characterType = index === 0 ? "orange" : "grey";
+    const characterColor = characterType === "orange" ? "#FF9900" : "#AAAAAA";
+    previewDiv.style.backgroundColor = characterColor;
+    
+    // Create sprite preview with error handling - update path with correct spelling
+    const img = document.createElement("img");
+    img.src = `assets/sprites/cats/${characterType}_0.png`;
+    img.style.objectFit = "cover";
+    img.style.width = "100%";
+    img.style.height = "100%";
+    
+    img.onerror = () => {
+      console.error(`Failed to load character preview: ${characterType}_0.png`);
+      previewDiv.style.backgroundColor = characterColor;
+    };
+    
+    previewDiv.appendChild(img);
+    
+    // Mark the currently selected character
     if (
       (index === 0 && progress.selectedCharacter === "orange") ||
-      (index === 1 && progress.selectedCharacter === "gray")
+      (index === 1 && progress.selectedCharacter === "grey")
     ) {
       option.classList.add("selected");
     } else {
@@ -171,7 +197,7 @@ function setupCharacterSelection() {
       option.classList.add("selected");
 
       // Save selection
-      progress.selectedCharacter = index === 0 ? "orange" : "gray";
+      progress.selectedCharacter = index === 0 ? "orange" : "grey";
       saveGameProgress(progress);
     });
   });

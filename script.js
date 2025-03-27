@@ -21,6 +21,9 @@ let currentLevel = 1;
 
 let animationFrameId;
 
+// Add at the top of the file with other variables
+let lastTime = 0;
+
 // Initialize UI system with the startGame callback
 initializeUI(startGame);
 
@@ -78,15 +81,21 @@ function showWinScreen() {
 }
 
 // Game loop that runs every frame
-function gameLoop() {
+function gameLoop(timestamp) {
+  // Calculate deltaTime
+  const deltaTime = timestamp - (lastTime || timestamp);
+  lastTime = timestamp;
+
   // Clear the canvas before drawing each frame
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   if (player) {
-    player.update(keys, GRAVITY, JUMP_FORCE);
+    // Pass deltaTime to player update
+    player.update(keys, GRAVITY, JUMP_FORCE, deltaTime);
     player.draw();
   }
 
+  // Rest of your game loop code...
   platforms.forEach((p) => p.draw(ctx));
 
   // Draw and check collision for each collectible
@@ -94,16 +103,13 @@ function gameLoop() {
     c.draw(ctx);
     if (c.checkCollision(player)) {
       console.log("Collected!");
-      // TODO: Add score logic here
     }
   });
 
   // Draw and check goal
   if (goal && !goal.reached) {
-    // Ensure the goal hasn't already been reached
     goal.draw(ctx);
     if (goal.checkCollision(player)) {
-      // Display win UI
       showWinScreen();
     }
   }
