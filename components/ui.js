@@ -266,6 +266,12 @@ export function initializeUI(startGameCallback) {
     showScreen("mainMenu");
   });
 
+  // Add restart game functionality
+  document.getElementById("restartGame")?.addEventListener("click", () => {
+    const progress = loadGameProgress();
+    startGame(progress.currentLevel); // Restart the current level
+  });
+
   // Setup escape key to pause
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
