@@ -149,6 +149,7 @@ Levels are designed using a simple CSV format and loaded dynamically into the ga
 |--------|-----------------------------|
 | `0`    | Platform or ground block    |
 | `$`    | Collectible (yarn or fish)  |
+| `F`    | Collectible (fish)  |
 | `!`    | Cat bed (level goal)        |
 | (blank) | Empty space                |
 
@@ -180,7 +181,7 @@ You can find level files in the `/levels/` folder.
 **Course**: COIS-MDST-2830H-A: Multimedia and Design  
 **Project**: *Catventure – A 2D Platformer Game*  
 **Team Members**: Aidan, Chris, Sehaj  
-**Date**: [Insert Date]
+**Date**: March 26th, 2025
 
 ---
 
@@ -229,6 +230,14 @@ You can find level files in the `/levels/` folder.
 Each team member contributed significantly to the completion of *Catventure*. We divided responsibilities based on our individual strengths and made collaborative decisions to align gameplay, design, and documentation into a cohesive final product.
 
 ---
+
+## 🖊️ Sign-Off
+
+| Name  | Signature | Date |
+|-------|-----------|------|
+| Aidan |Aidan Morbi|March 26th, 2025|
+| Chris |Chris Ricard|March 26th, 2025|
+| Sehaj |Sehaj Sahni|March 26 2025|
 
 
 ## 🤝 Contributing
