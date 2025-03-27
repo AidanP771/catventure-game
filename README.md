@@ -172,7 +172,7 @@ You can find level files in the `/levels/` folder.
 
 ## 📼 Demo Video
 
-[Link to YouTube or Drive video]
+[[Link to YouTube or Drive video](https://www.youtube.com/watch?v=KgNdI_jcBjE)]
 
 ## 👥 Team Contributions
 
