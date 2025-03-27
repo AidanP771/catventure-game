@@ -237,7 +237,7 @@ Each team member contributed significantly to the completion of *Catventure*. We
 |-------|-----------|------|
 | Aidan |Aidan Morbi|March 26th, 2025|
 | Chris |Chris Ricard|March 26th, 2025|
-| Sehaj |Sehaj Sahni|March 26 2025|
+| Sehaj |Sehaj Sahni|March 26th, 2025|
 
 
 ## 🤝 Contributing
