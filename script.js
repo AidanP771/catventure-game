@@ -36,7 +36,7 @@ loadLevel("levels/level1.csv", canvas.height).then((level) => {
 // Show win screen function
 function showWinScreen() {
   const winScreen = document.getElementById("winScreen");
-  winScreen.classList.add("activate"); // Change display with js
+  winScreen.classList.add("active"); // Change display with js
   cancelAnimationFrame(animationFrameId);
 }
 
@@ -62,7 +62,8 @@ function gameLoop() {
   });
 
   // Draw and check goal
-  if (goal) {
+  if (goal && !goal.reached) {
+    // Ensure the goal hasn't already been reached
     goal.draw(ctx);
     if (goal.checkCollision(player)) {
       // Display win UI
