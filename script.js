@@ -11,7 +11,7 @@ const ctx = canvas.getContext("2d");
 
 // Physics constants
 const GRAVITY = 0.5;
-const JUMP_FORCE = -12;
+const JUMP_FORCE = -13;
 
 let player;
 let platforms = [];
