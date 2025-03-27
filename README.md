@@ -1,5 +1,7 @@
 # Catventure: Platform Paw-sibilities
 
+[![Play On The Web](https://img.shields.io/badge/Play%20Now-GitHub%20Pages-orange?style=for-the-badge)](https://aidanp771.github.io/catventure-game/)
+
 ## 🐾 Overview
 
 Catventure is a 2D platformer where players guide a nimble cat through platforms, collect fish treats and yarn balls while dodge dangers to reach the cozy cat bed at the end. Designed for web browsers using HTML, CSS, and JavaScript.
