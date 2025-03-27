@@ -20,9 +20,9 @@ Deliver a fun and accessible game experience while showcasing modern UI/UX princ
 
 ## 🔧 Technology Stack
 
-- **Languages**: HTML5, CSS3, JavaScript (Vanilla) \*\*This could change..
+- **Languages**: HTML5, CSS3, JavaScript (Vanilla)
 - **Design Tools**: Figma
-- **Libraries**: [Optional] GSAP for animations \*\*This could change
+- **Libraries**: N/A
 
 ## 🗂️ Project Structure (File/Folder Setup)
 
