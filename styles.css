@@ -245,3 +245,40 @@ input[type="range"]::-webkit-slider-thumb {
 body {
   font-family: 'Arial', sans-serif;
 }
+
+body.high-contrast {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+body.high-contrast h1,
+body.high-contrast h2,
+body.high-contrast h3 {
+  color: #ffffff;
+}
+
+body.high-contrast button {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.high-contrast button:hover {
+  background-color: #cccccc;
+}
+
+body.high-contrast .danger-button {
+  background-color: #ff4444;
+  color: #000000;
+}
+
+body.high-contrast .danger-button:hover {
+  background-color: #cc0000;
+}
+
+body.high-contrast canvas {
+  background-color: #000000;
+}
+
+body.high-contrast .platform {
+  background-color: #ffffff; /* White color */
+}
