@@ -1,6 +1,6 @@
 // Class representing a single platform in the game
 export class Platform {
-  constructor(x, y, width, height, color = "red") {
+  constructor(x, y, width, height, color = "black") { // Changed to black
     this.x = x;
     this.y = y;
     this.width = width;

@@ -32,7 +32,10 @@ export async function loadLevel(path, canvasHeight) {
           platforms.push(new Platform(x, y, TILE_SIZE, TILE_SIZE));
           break;
         case "$":
-          collectibles.push(new Collectible(x, y)); // Collectible
+          collectibles.push(new Collectible(x, y, "yarn")); // Yarn ball
+          break;
+        case "F":
+          collectibles.push(new Collectible(x, y, "fish")); // Fish
           break;
         case "!":
           goal = new Goal(x, y, TILE_SIZE, TILE_SIZE); // Goal class

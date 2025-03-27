@@ -2,19 +2,28 @@ export class Collectible {
   constructor(x, y, type = "yarn") {
     this.x = x;
     this.y = y;
-    this.width = 40;
-    this.height = 40;
+    this.width = 32; // Set width to 32
+    this.height = 32; // Set height to 32
     this.type = type;
     this.collected = false;
 
-    // Placeholder colours by type
-    this.color = type === "fish" ? "blue" : "purple";
+    // Load images
+    this.image = new Image();
+    if (type === "fish") {
+      this.image.src = "assets/sprites/Fish.png";
+    } else {
+      this.image.src = "assets/sprites/yarnball.png";
+    }
+
+    this.imageLoaded = false;
+    this.image.onload = () => {
+      this.imageLoaded = true;
+    };
   }
 
   draw(ctx) {
-    if (!this.collected) {
-      ctx.fillStyle = this.color;
-      ctx.fillRect(this.x, this.y, this.width, this.height);
+    if (!this.collected && this.imageLoaded) {
+      ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
     }
   }
 
