@@ -2,16 +2,23 @@ export class Goal {
   constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.width = 50;
-    this.height = 50;
-    this.color = "gold"; // Placeholder color
+    this.width = 32; // Match flag sprite width
+    this.height = 32; // Match flag sprite height
     this.reached = false;
+
+    // Load the flag image
+    this.image = new Image();
+    this.image.src = "assets/sprites/flag.png";
+    this.imageLoaded = false;
+
+    this.image.onload = () => {
+      this.imageLoaded = true;
+    };
   }
 
   draw(ctx) {
-    if (!this.reached) {
-      ctx.fillStyle = this.color;
-      ctx.fillRect(this.x, this.y, this.width, this.height);
+    if (!this.reached && this.imageLoaded) {
+      ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
     }
   }
 
