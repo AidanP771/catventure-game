@@ -149,6 +149,7 @@ Levels are designed using a simple CSV format and loaded dynamically into the ga
 |--------|-----------------------------|
 | `0`    | Platform or ground block    |
 | `$`    | Collectible (yarn or fish)  |
+| `F`    | Collectible (fish)  |
 | `!`    | Cat bed (level goal)        |
 | (blank) | Empty space                |
 
@@ -171,11 +172,72 @@ You can find level files in the `/levels/` folder.
 
 ## 📼 Demo Video
 
-[Link to YouTube or Drive video]
+[[Link to YouTube or Drive video](https://www.youtube.com/watch?v=KgNdI_jcBjE)]
 
 ## 👥 Team Contributions
 
-Each member’s role and responsibilities
+# 🐾 *Catventure* — Group Contribution Report
+
+**Course**: COIS-MDST-2830H-A: Multimedia and Design  
+**Project**: *Catventure – A 2D Platformer Game*  
+**Team Members**: Aidan, Chris, Sehaj  
+**Date**: March 26th, 2025
+
+---
+
+## 🔹 Overview
+
+*Catventure* is a side-scrolling 2D platformer where players guide a cat through puzzle-like levels using smooth movement and sprite-based animations. Our group collaborated across code, design, and documentation to bring the project together.
+
+---
+
+## 👥 Individual Contributions
+
+### **Aidan**
+- Developed the core game logic using HTML, CSS, and JavaScript.
+- Implemented sprite-based animations using 32x32 frame slicing for sitting and laying states.
+- Programmed player movement, input handling, and canvas rendering logic.
+- Integrated dynamic level loading from CSV files.
+- Ensured smooth interaction between gameplay elements (platforms, collision, game states).
+
+### **Chris**
+- Conducted research into UI/UX best practices for platformer games and accessible game design.
+- Wrote the README and project documentation, including:
+  - Game objectives  
+  - User personas  
+  - Accessibility strategy  
+  - Code structure and development practices
+- Helped test the game and provided feedback for iterations.
+
+### **Sehaj**
+- Designed all visual assets and selected the cat sprite sheet used in the game.
+- Contributed to the game’s visual identity, including UI layout and in-game environment aesthetics.
+- Designed the main menu, level transitions, and overall visual flow.
+- Assisted in ensuring the accessibility of visuals (e.g., colour choices and contrast).
+
+---
+
+## 🔄 Team Workflow
+
+- Used Discord for communication and weekly check-ins.
+- Shared progress and files via GitHub, using branches for isolated changes.
+- Collaborated through feedback and testing loops to fine-tune the game’s feel and polish.
+
+---
+
+## ✅ Final Notes
+
+Each team member contributed significantly to the completion of *Catventure*. We divided responsibilities based on our individual strengths and made collaborative decisions to align gameplay, design, and documentation into a cohesive final product.
+
+---
+
+## 🖊️ Sign-Off
+
+| Name  | Signature | Date |
+|-------|-----------|------|
+| Aidan |Aidan Morbi|March 26th, 2025|
+| Chris |Chris Ricard|March 26th, 2025|
+| Sehaj |Sehaj Sahni|March 26th, 2025|
 
 
 ## 🤝 Contributing
