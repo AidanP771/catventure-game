@@ -1,13 +1,13 @@
 import { loadGameProgress } from "./ui.js";
 
+// Define the header height at the top of the file
+const HEADER_HEIGHT = 32; // Adjust this value based on the actual height of the header in the sprite sheet
+
 // Animation states enum
 const AnimationState = {
-  SITTING_UP: 0,
-  SITTING_LEFT: 1,
-  SITTING_DOWN: 2,
-  SITTING_RIGHT: 3,
-  LAYING_DOWN: 4,
-  // Add more states as needed
+  IDLE: { row: 1, col: 2 }, // Row 1, Column 2 for idle
+  RUNNING_LEFT: { row: 3, startCol: 17, endCol: 20 }, // Row 3, Columns 17-20
+  RUNNING_RIGHT: { row: 3, startCol: 17, endCol: 20 }, // Same as left, but flipped
 };
 
 // Player class definition - handles movement, jumping, and collision with platforms
@@ -83,32 +83,28 @@ export class Player {
 
   // Update player position based on input, gravity, and collisions
   update(keys, gravity, jumpForce, deltaTime = 16) {
-    // Store previous position for collision resolution
     this.prevX = this.x;
     this.prevY = this.y;
 
-    // Track if player is moving
     let moving = false;
 
-    // Handle horizontal movement and animation
+    // Handle horizontal movement
     if (keys["ArrowLeft"] || keys["a"]) {
       this.x -= this.speed;
-      this.frameY = AnimationState.SITTING_LEFT;
+      this.frameY = AnimationState.RUNNING_LEFT.row;
+      this.frameX = (this.frameX + 1) % (AnimationState.RUNNING_LEFT.endCol - AnimationState.RUNNING_LEFT.startCol + 1) + AnimationState.RUNNING_LEFT.startCol;
       this.facing = "left";
       moving = true;
     } else if (keys["ArrowRight"] || keys["d"]) {
       this.x += this.speed;
-      this.frameY = AnimationState.SITTING_RIGHT;
+      this.frameY = AnimationState.RUNNING_RIGHT.row;
+      this.frameX = (this.frameX + 1) % (AnimationState.RUNNING_RIGHT.endCol - AnimationState.RUNNING_RIGHT.startCol + 1) + AnimationState.RUNNING_RIGHT.startCol;
       this.facing = "right";
       moving = true;
     } else {
-      // If not moving, use the idle animation for current direction
-      switch (this.facing) {
-        case "up": this.frameY = AnimationState.SITTING_UP; break;
-        case "left": this.frameY = AnimationState.SITTING_LEFT; break;
-        case "right": this.frameY = AnimationState.SITTING_RIGHT; break;
-        default: this.frameY = AnimationState.SITTING_DOWN;
-      }
+      // Idle animation
+      this.frameY = AnimationState.IDLE.row;
+      this.frameX = AnimationState.IDLE.col;
     }
 
     // Jumping logic
@@ -121,7 +117,6 @@ export class Player {
     this.velocityY += gravity;
     this.y += this.velocityY;
 
-    // Check collision with each platform
     this.checkPlatformCollisions();
 
     // Clamp player within screen horizontally
@@ -133,16 +128,10 @@ export class Player {
       this.velocityY = 0;
       this.isJumping = false;
     }
-    
-    // Update animation frame
+
+    // Update animation frame timer
     this.frameTimer += deltaTime;
     if (this.frameTimer >= this.frameDuration) {
-      // Only animate if moving
-      if (moving) {
-        this.frameX = (this.frameX + 1) % this.frameCount;
-      } else {
-        this.frameX = 0; // Reset to first frame when not moving
-      }
       this.frameTimer = 0;
     }
   }
@@ -150,12 +139,31 @@ export class Player {
   // Draw the player sprite
   draw() {
     if (this.spriteLoaded) {
-      try {
-        // Draw the sprite
+      const sourceX = this.frameX * this.frameWidth;
+      const sourceY = this.frameY * this.frameHeight + HEADER_HEIGHT; // Add header offset
+
+      if (this.facing === "right") {
+        // Flip the sprite horizontally for running right
+        this.ctx.save();
+        this.ctx.scale(-1, 1); // Flip horizontally
         this.ctx.drawImage(
           this.sprite,
-          this.frameX * this.frameWidth,
-          this.frameY * this.frameHeight,
+          sourceX,
+          sourceY,
+          this.frameWidth,
+          this.frameHeight,
+          -this.x - this.width, // Adjust for flipped position
+          this.y,
+          this.width,
+          this.height
+        );
+        this.ctx.restore();
+      } else {
+        // Draw normally for other directions
+        this.ctx.drawImage(
+          this.sprite,
+          sourceX,
+          sourceY,
           this.frameWidth,
           this.frameHeight,
           this.x,
@@ -163,13 +171,11 @@ export class Player {
           this.width,
           this.height
         );
-      } catch (e) {
-        // If drawing fails, fall back to rectangle
-        console.error("Error drawing sprite:", e);
-        this.drawFallback();
       }
     } else {
-      this.drawFallback();
+      // Fallback to a rectangle if the sprite isn't loaded
+      this.ctx.fillStyle = "orange";
+      this.ctx.fillRect(this.x, this.y, this.width, this.height);
     }
   }
   
