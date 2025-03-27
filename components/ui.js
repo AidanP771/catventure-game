@@ -312,6 +312,14 @@ export function initializeUI(startGameCallback) {
       }
     }
   });
+
+  // Setup escape key to go back from settings
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && document.getElementById("settingsMenu").classList.contains("active")) {
+      saveSettings();
+      showScreen("mainMenu");
+    }
+  });
 }
 
 // This will be assigned in initializeUI
