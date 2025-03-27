@@ -48,6 +48,21 @@ export function completeLevel(levelNum) {
   return progress;
 }
 
+export function resetGameProgress() {
+  const defaultProgress = {
+    currentLevel: 1,
+    unlockedLevels: [1],
+    maxLevel: 8,
+    settings: {
+      soundVolume: 50,
+      highContrast: false,
+    },
+    selectedCharacter: "orange",
+  };
+  saveGameProgress(defaultProgress);
+  return defaultProgress;
+}
+
 // Show specified screen and hide others
 export function showScreen(screenId) {
   // Hide all screens
@@ -203,6 +218,15 @@ export function initializeUI(startGameCallback) {
   document.getElementById("backFromSettings").addEventListener("click", () => {
     saveSettings();
     showScreen("mainMenu");
+  });
+
+  // Reset progress button
+  document.getElementById("resetProgress").addEventListener("click", () => {
+    if (confirm("Are you sure you want to reset all game progress? This will reset all unlocked levels and settings.")) {
+      resetGameProgress();
+      loadSettings(); // Reload settings to reflect reset
+      alert("Game progress has been reset!");
+    }
   });
 
   // Settings change events

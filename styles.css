@@ -138,3 +138,18 @@ button:disabled {
 input[type="range"] {
   width: 200px;
 }
+
+.danger-zone {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #ccc;
+}
+
+.danger-button {
+  background-color: #e63946;
+  color: white;
+}
+
+.danger-button:hover {
+  background-color: #c1121f;
+}
