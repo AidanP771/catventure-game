@@ -21,10 +21,96 @@
     </style>
   </head>
   <body>
-    <div id="gameWrapper" style="position: relative">
-      <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div
+      id="gameWrapper"
+      style="position: relative; width: 800px; height: 600px; margin: 0 auto"
+    >
+      <!-- Main menu screen -->
+      <div id="mainMenu" class="overlay-screen active">
+        <div class="menu-content">
+          <h1>Catventure</h1>
+          <button id="startGame">Start Game</button>
+          <button id="levelSelect">Level Select</button>
+          <button id="characterButton">Character</button>
+          <button id="settingsButton">Settings</button>
+        </div>
+      </div>
 
-      <div id="winScreen" class="overlay-screen">🎉 Level complete!</div>
+      <!-- Level select screen -->
+      <div id="levelSelectMenu" class="overlay-screen">
+        <div class="menu-content">
+          <h2>Select Level</h2>
+          <div id="levelButtons"></div>
+          <button id="backToMain">Back to Menu</button>
+        </div>
+      </div>
+
+      <!-- Character selection screen -->
+      <div id="characterMenu" class="overlay-screen">
+        <div class="menu-content">
+          <h2>Choose Your Cat</h2>
+          <div id="characterOptions">
+            <!-- Character options will be populated here -->
+            <div class="character-option selected">
+              <div
+                class="character-preview"
+                style="background-color: orange; width: 80px; height: 80px"
+              ></div>
+              <p>Orange Tabby</p>
+            </div>
+            <div class="character-option">
+              <div
+                class="character-preview"
+                style="background-color: gray; width: 80px; height: 80px"
+              ></div>
+              <p>Gray Kitty</p>
+            </div>
+          </div>
+          <button id="backFromCharacter">Back</button>
+        </div>
+      </div>
+
+      <!-- Settings screen -->
+      <div id="settingsMenu" class="overlay-screen">
+        <div class="menu-content">
+          <h2>Settings</h2>
+          <div class="setting-group">
+            <label for="soundVolume">Sound Volume</label>
+            <input type="range" id="soundVolume" min="0" max="100" value="50" />
+          </div>
+          <div class="setting-group">
+            <label for="highContrast">High Contrast Mode</label>
+            <input type="checkbox" id="highContrast" />
+          </div>
+          <button id="backFromSettings">Back</button>
+        </div>
+      </div>
+
+      <!-- Game canvas (initially hidden) -->
+      <canvas
+        id="gameCanvas"
+        width="800"
+        height="600"
+        style="display: none"
+      ></canvas>
+
+      <!-- Win screen -->
+      <div id="winScreen" class="overlay-screen">
+        <div class="menu-content">
+          <h2>🎉 Level Complete!</h2>
+          <button id="nextLevel">Next Level</button>
+          <button id="returnToMenu">Menu</button>
+        </div>
+      </div>
+
+      <!-- Pause menu -->
+      <div id="pauseMenu" class="overlay-screen">
+        <div class="menu-content">
+          <h2>Game Paused</h2>
+          <button id="resumeGame">Resume</button>
+          <button id="quitToMenu">Quit to Menu</button>
+        </div>
+      </div>
     </div>
 
     <script type="module" src="script.js"></script>
