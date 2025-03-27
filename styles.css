@@ -153,3 +153,95 @@ input[type="range"] {
 .danger-button:hover {
   background-color: #c1121f;
 }
+
+/* Settings menu styles */
+.settings-section {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+.settings-section:last-of-type {
+  border-bottom: none;
+}
+
+.settings-section h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #e6e6e6;
+  text-align: left;
+  width: 100%;
+}
+
+.setting-group {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 1.1rem;
+}
+
+.setting-group label {
+  margin-right: 15px;
+  font-size: 1.1rem;
+}
+
+.setting-description {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 8px;
+  width: 100%;
+  text-align: left;
+}
+
+/* Danger zone styling */
+.danger-zone {
+  margin-top: 20px;
+}
+
+.danger-zone .setting-group {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.danger-button {
+  background-color: #e63946;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 5px;
+  font-size: 1.1rem;
+}
+
+.danger-button:hover {
+  background-color: #c1121f;
+}
+
+/* Make input range (slider) more consistent with the overall design */
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 50%;
+  height: 6px;
+  background: #555;
+  border-radius: 3px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Base font styling */
+body {
+  font-family: 'Arial', sans-serif;
+}

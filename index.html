@@ -74,18 +74,29 @@
       <div id="settingsMenu" class="overlay-screen">
         <div class="menu-content">
           <h2>Settings</h2>
-          <div class="setting-group">
-            <label for="soundVolume">Sound Volume</label>
-            <input type="range" id="soundVolume" min="0" max="100" value="50" />
+          
+          <!-- Game settings section -->
+          <div class="settings-section">
+            <h3>Game Options</h3>
+            <div class="setting-group">
+              <label for="soundVolume">Sound Volume</label>
+              <input type="range" id="soundVolume" min="0" max="100" value="50" />
+            </div>
+            <div class="setting-group">
+              <label for="highContrast">High Contrast Mode</label>
+              <input type="checkbox" id="highContrast" />
+            </div>
           </div>
-          <div class="setting-group">
-            <label for="highContrast">High Contrast Mode</label>
-            <input type="checkbox" id="highContrast" />
-          </div>
-          <div class="setting-group danger-zone">
+          
+          <!-- Data management section -->
+          <div class="settings-section danger-zone">
             <h3>Data Management</h3>
-            <button id="resetProgress" class="danger-button">Reset Game Progress</button>
+            <div class="setting-group">
+              <p class="setting-description">Reset all game progress including unlocked levels and settings.</p>
+              <button id="resetProgress" class="danger-button">Reset Game Progress</button>
+            </div>
           </div>
+          
           <button id="backFromSettings">Back</button>
         </div>
       </div>
