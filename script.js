@@ -17,10 +17,11 @@ let platforms = [];
 let collectibles = [];
 let goal = null;
 
+let animationFrameId;
+
 // Load the level and THEN start the game
 loadLevel("levels/level1.csv", canvas.height).then((level) => {
   platforms = level.platforms;
-  console.log(platforms);
   collectibles = level.collectibles;
   goal = level.goal;
 
@@ -31,6 +32,13 @@ loadLevel("levels/level1.csv", canvas.height).then((level) => {
   initInputListeners();
   requestAnimationFrame(gameLoop);
 });
+
+// Show win screen function
+function showWinScreen() {
+  const winScreen = document.getElementById("winScreen");
+  winScreen.classList.add("activate"); // Change display with js
+  cancelAnimationFrame(animationFrameId);
+}
 
 // Game loop that runs every frame
 function gameLoop() {
@@ -53,8 +61,14 @@ function gameLoop() {
     }
   });
 
-  requestAnimationFrame(gameLoop);
-}
+  // Draw and check goal
+  if (goal) {
+    goal.draw(ctx);
+    if (goal.checkCollision(player)) {
+      // Display win UI
+      showWinScreen();
+    }
+  }
 
-// Start the game loop
-gameLoop();
+  animationFrameId = requestAnimationFrame(gameLoop);
+}

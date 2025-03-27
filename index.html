@@ -20,7 +20,11 @@
     </style>
   </head>
   <body>
-    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div id="gameWrapper" style="position: relative">
+      <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+      <div id="winScreen" class="overlay-screen">🎉 Level complete!</div>
+    </div>
 
     <script type="module" src="script.js"></script>
   </body>

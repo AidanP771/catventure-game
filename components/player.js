@@ -7,7 +7,7 @@ export class Player {
 
     // Player position and size
     this.x = canvas.width / 2;
-    this.y = canvas.height - 150;
+    this.y = canvas.height - 100;
     this.width = 40;
     this.height = 40;
 
