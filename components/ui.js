@@ -246,6 +246,11 @@ export function initializeUI(startGameCallback) {
     showScreen("mainMenu");
   });
 
+  // Privacy policy button
+  document.getElementById("privacyButton").addEventListener("click", () => {
+    window.location.href = "privacy.html"; // Navigate to the privacy policy page
+  });
+
   // Reset progress button
   document.getElementById("resetProgress").addEventListener("click", () => {
     if (confirm("Are you sure you want to reset all game progress? This will reset all unlocked levels and settings.")) {
